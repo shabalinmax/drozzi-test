@@ -18,6 +18,10 @@ body a {
   display: flex;
 }
 
+.d-none {
+  display: none;
+}
+
 h1 {
   font-size: 56px;
 }
@@ -41,10 +45,8 @@ h5 {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -54,6 +56,14 @@ header {
   line-height: 16px;
   z-index: 99;
   padding: 5px;
+}
+@media screen and (max-width: 1100px) {
+  header {
+    flex-direction: column;
+  }
+  header button {
+    display: none;
+  }
 }
 header .logo {
   margin-left: 32px;
@@ -94,10 +104,47 @@ header .nav button span {
   font-size: 16px;
   padding: 10px 20px;
 }
+@media screen and (max-width: 600px) {
+  header {
+    transition: 0.5s;
+  }
+  header .logo {
+    left: 16px;
+    top: 24px;
+    position: absolute;
+  }
+  header .nav {
+    margin-top: 70px;
+  }
+  header .nav svg {
+    display: block;
+    position: absolute;
+    right: 21px;
+    top: 36px;
+  }
+  header .nav ul {
+    padding-inline-start: 0;
+    flex-direction: column;
+  }
+  header .nav ul a:nth-child(1) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 16px;
+    margin-bottom: 20px;
+  }
+  header .nav ul a:nth-child(2) {
+    margin-left: 16px;
+    margin-bottom: 20px;
+  }
+  header .nav ul a:nth-child(3) {
+    margin-left: 16px;
+  }
+}
 
 .main {
   background-image: url("./img/img.png");
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   padding-left: 32px;
 }
@@ -131,6 +178,28 @@ header .nav button span {
 .main .mainBottom .messengers .telegram span {
   margin-left: 8px;
   margin-right: 32px;
+}
+@media screen and (max-width: 580px) {
+  .main .about {
+    padding-top: 17px;
+  }
+  .main .mainBottom {
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+  }
+  .main .mainBottom .scrollDown {
+    padding-left: 0;
+  }
+  .main .mainBottom .messengers {
+    flex-direction: row;
+  }
+  .main .mainBottom .messengers div span {
+    display: none;
+  }
+  .main .mainBottom .messengers .telegram {
+    margin-left: 7px;
+  }
 }
 
 #portfolio {
@@ -234,13 +303,58 @@ header .nav button span {
 #portfolio .allCases button:hover a {
   color: #fff;
 }
+@media screen and (max-width: 480px) {
+  #portfolio {
+    margin-left: 8px;
+  }
+  #portfolio .title {
+    display: block;
+    padding-bottom: 10px;
+  }
+  #portfolio .title h2 {
+    margin-block-start: 16px;
+    margin-block-end: 8px;
+  }
+  #portfolio .title a {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  #portfolio .allCases button {
+    margin-top: 12px;
+  }
+}
 
 #scrollToAbout {
   padding: 50px 0;
 }
+@media screen and (max-width: 480px) {
+  #scrollToAbout {
+    padding: 35px;
+  }
+}
 
 #aboutUs {
   margin-left: 32px;
+}
+@media screen and (max-width: 1100px) {
+  #aboutUs .ourStaff {
+    flex-direction: column;
+  }
+  #aboutUs .ourStaff div {
+    margin-left: 32px;
+  }
+  #aboutUs .infoAndPhoto {
+    flex-direction: column;
+  }
+  #aboutUs .infoAndPhoto .photo {
+    margin-top: 32px;
+  }
+  #aboutUs .infoAndPhoto .photo img {
+    width: 100%;
+  }
 }
 #aboutUs .ourStaff {
   font-size: 32px;
@@ -306,15 +420,61 @@ header .nav button span {
   color: #fff;
 }
 #aboutUs .infoAndPhoto .photo {
-  padding-right: 50px;
+  padding-right: 15px;
 }
 #aboutUs .infoAndPhoto .photo img {
-  max-height: 678px;
-  max-width: 678px;
+  max-height: 99vh;
+  max-width: 99vh;
+}
+@media screen and (max-width: 480px) {
+  #aboutUs {
+    margin-left: 16px;
+  }
+  #aboutUs .ourStaff {
+    margin-top: 30px;
+  }
+  #aboutUs .ourStaff div {
+    margin-left: 0;
+  }
+  #aboutUs .ourStaff div:not(:first-child) {
+    margin-left: 0;
+  }
+  #aboutUs .infoAndPhoto .info {
+    max-width: 99%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+  }
+  #aboutUs .infoAndPhoto .info .statistic {
+    margin-top: 32px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ".";
+  }
+  #aboutUs .infoAndPhoto .info .moreInfo {
+    display: flex;
+    justify-content: center;
+  }
+  #aboutUs .infoAndPhoto .photo {
+    margin-bottom: 70px;
+  }
 }
 
 #makeRequest {
   margin-left: 32px;
+}
+@media screen and (max-width: 1100px) {
+  #makeRequest div {
+    flex-direction: column;
+  }
+  #makeRequest div .sentCallback {
+    margin-top: 32px;
+    margin-left: 0;
+  }
+  #makeRequest div .sentCallback .group input {
+    width: 80%;
+  }
 }
 #makeRequest h4 {
   margin: 8px 0;
@@ -322,26 +482,8 @@ header .nav button span {
 #makeRequest div div .manager img {
   margin-top: 50px;
 }
-#makeRequest div div .briefing h4 {
-  margin-top: 72px;
-  margin-bottom: 15px;
-}
-#makeRequest div div .briefing div {
-  margin-top: 20px;
-}
-#makeRequest div div .briefing div a {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  color: #D22020;
-  border-bottom: 1px rgba(210, 32, 32, 0.4) solid;
-}
-#makeRequest div div .briefing div a:hover {
-  font-size: 25px;
-  transition: 0.2s ease-in-out;
-}
 #makeRequest .sentCallback {
-  margin-left: 120px;
+  margin-left: 15%;
 }
 #makeRequest .sentCallback .clientName {
   font-size: 16px;
@@ -360,7 +502,6 @@ header .nav button span {
   font-size: 16px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 560px;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #CED4DA;
@@ -415,6 +556,29 @@ header .nav button span {
 #makeRequest .big input {
   width: 700px;
 }
+#makeRequest .briefing h4 {
+  margin-top: 72px;
+  margin-bottom: 15px;
+}
+#makeRequest .briefing div {
+  margin-top: 20px;
+}
+#makeRequest .briefing div a {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #D22020;
+  border-bottom: 1px rgba(210, 32, 32, 0.4) solid;
+}
+#makeRequest .briefing div a:hover {
+  font-size: 25px;
+  transition: 0.2s ease-in-out;
+}
+@media screen and (max-width: 660px) {
+  #makeRequest .small {
+    font-size: 24px;
+  }
+}
 
 footer {
   display: flex;
@@ -441,6 +605,27 @@ footer div a {
 footer div img {
   margin-top: 18px;
   margin-left: 40%;
+}
+@media screen and (max-width: 660px) {
+  footer {
+    display: block;
+  }
+  footer div {
+    display: block;
+    flex-direction: row;
+  }
+  footer div span {
+    display: inline-block;
+    margin-left: 32%;
+  }
+  footer div a {
+    display: inline-block;
+    margin-left: 25%;
+  }
+  footer div a:nth-child(1) {
+    display: inline-block;
+    margin-left: 32%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

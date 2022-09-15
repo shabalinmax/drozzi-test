@@ -18,7 +18,9 @@ body {
 .d-flex {
   display: flex;
 }
-
+.d-none {
+  display: none;
+}
 h1 {
   font-size: 56px;
 }
@@ -37,10 +39,15 @@ h5 {
   font-size: 26px;
 }
 header {
-  position: fixed;
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+    button {
+      display: none;
+    }
+  }
+
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -50,6 +57,7 @@ header {
   line-height: 16px;
   z-index: 99;
   padding: 5px;
+
   .logo {
     margin-left: 32px;
   }
@@ -60,7 +68,6 @@ header {
       a {
         &:not(:first-child) {
           margin-left: 32px;
-
         }
         li {
           cursor: pointer;
@@ -92,10 +99,54 @@ header {
       }
     }
   }
-}
+  @media screen and (max-width: 600px) {
+    //display: block;
+    //
+    //height: 100vh;
+    //
+    transition: 0.5s;
+    .logo {
+      left: 16px;
+      top: 24px;
+      position: absolute;
+    }
+    .nav {
+      margin-top: 70px;
+      svg {
+        display: block;
+        position: absolute;
+        right: 21px;
+        top: 36px;
+      }
+      ul {
+        padding-inline-start: 0;
+        flex-direction: column;
+        //display: none;
+        //
+        a:nth-child(1) {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          margin-left: 16px;
+          margin-bottom: 20px ;
+        }
+        a:nth-child(2) {
+          margin-left: 16px;
+          margin-bottom: 20px ;
+
+        }
+        a:nth-child(3) {
+          margin-left: 16px;
+        }
+        }
+      }
+    }
+  }
+
 .main {
+
   background-image: url("./img/img.png");
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   padding-left: 32px;
   .about {
@@ -133,30 +184,60 @@ header {
       }
     }
   }
+  @media screen and (max-width: 580px) {
+    .about {
+      padding-top: 17px;
+    }
+    .mainBottom {
+      justify-content: center;
+      align-items: center;
+      padding-left: 0;
+      .scrollDown {
+        padding-left: 0;
+      }
+      .messengers {
+        flex-direction: row;
+        div {
+          span {
+            display: none;
+          }
+        }
+        .telegram {
+          margin-left: 7px;
+        }
+      }
+    }
+  }
 }
 #portfolio {
   padding-top: 60px;
   margin-left: 32px;
+
   .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     h2 {
       margin-top: 0;
       margin-bottom: 40px;
     }
+
     a {
       color: $accent;
       margin-right: 32px;
+
       svg {
         margin-left: 8px;
       }
+
       &:hover {
         font-size: 20px;
         transition: 0.3s ease-in-out;
       }
     }
   }
+
   .gridPortfolio {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -173,17 +254,21 @@ header {
     ". "
     ". ";
     }
+
     .exampleOfWork {
       padding-bottom: 20px;
+
       .imgOfExample {
         width: 98%;
         height: 515px;
         border-radius: 8px;
+
         .categoryOfWork {
           justify-content: flex-start;
           margin-left: 25px;
           padding-top: 480px;
           height: 24px;
+
           div {
             span {
               border-radius: 10px 10px 10px 10px;
@@ -192,13 +277,15 @@ header {
               font-size: 14px;
               line-height: 20px;
               color: white;
-              text-transform: uppercase ;
+              text-transform: uppercase;
             }
           }
         }
       }
+
       .exampleInfo {
         max-width: 680px;
+
         h4 {
           margin: 0;
           font-size: 24px;
@@ -207,15 +294,18 @@ header {
           letter-spacing: -3%;
           color: #212529;
         }
+
         span {
           color: #6C757D;
         }
       }
     }
   }
+
   .allCases {
     display: flex;
     justify-content: center;
+
     button {
       display: flex;
       margin-top: 95px;
@@ -223,6 +313,7 @@ header {
       border: 1px solid $accent;
       background-color: #fff;
       border-radius: 56px;
+
       a {
         font-size: 18px;
         line-height: 130%;
@@ -231,23 +322,74 @@ header {
         cursor: pointer;
         text-transform: uppercase;
       }
+
       &:hover {
         background-color: #D22020;
         transition: 0.2s ease-in-out;
+
         a {
           color: #fff;
         }
       }
     }
   }
+
+  @media screen and (max-width: 480px) {
+    margin-left: 8px;
+    .title {
+      display: block;
+      padding-bottom: 10px;
+      h2 {
+        margin-block-start: 16px;
+        margin-block-end: 8px
+      }
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0.02em;
+        text-align: center;
+      }
+    }
+    .allCases {
+      button {
+        margin-top: 12px;
+      }
+    }
+  }
 }
 #scrollToAbout {
   padding: 50px 0;
-}
+    @media screen and (max-width: 480px) {
+      padding: 35px;
+    }
+
+  }
 #aboutUs {
   margin-left: 32px;
+  @media screen and (max-width: 1100px) {
+    .ourStaff {
+      flex-direction: column;
+      div {
+        margin-left: 32px;
+      }
+
+    }
+    .infoAndPhoto {
+      flex-direction: column;
+      .info {
+
+      }
+      .photo {
+        margin-top: 32px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .ourStaff {
-    //styleName: HEADER/H3 Regular 32-120%;
     font-size: 32px;
     font-weight: 400;
     line-height: 38px;
@@ -264,8 +406,6 @@ header {
         margin-right: 12px;
       }
     }
-
-
   }
   .infoAndPhoto {
     display: flex;
@@ -318,16 +458,66 @@ header {
       }
     }
     .photo {
-      padding-right: 50px;
+      padding-right: 15px;
       img {
-        max-height: 678px;
-        max-width: 678px;
+        max-height: 99vh;
+        max-width: 99vh;
       }
     }
+  }
+  @media screen and (max-width: 480px) {
+    margin-left: 16px;
+    .ourStaff {
+      margin-top: 30px;
+      div {
+        margin-left: 0;
+      }
+      div:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  .infoAndPhoto {
+    .info {
+      max-width: 99%;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+      text-align: left;
+      .statistic {
+        margin-top: 32px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: ".";
+      }
+      .moreInfo {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .photo {
+      margin-bottom: 70px ;
+    }
+  }
   }
 }
 #makeRequest {
   margin-left: 32px;
+  @media screen and (max-width: 1100px) {
+    div {
+      flex-direction: column;
+      .sentCallback {
+        margin-top: 32px;
+        margin-left: 0;
+        .group {
+          input {
+            width: 80%;
+
+          }
+        }
+      }
+    }
+  }
+
   h4 {
     margin: 8px 0;
   }
@@ -339,31 +529,12 @@ header {
         }
         h4 {}
       }
-      .briefing {
-        h4 {
-          margin-top: 72px;
-          margin-bottom: 15px;
-        }
-        div {
-          margin-top: 20px;
-          a {
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 30px;
-            color: $accent;
-            border-bottom: 1px rgba(210, 32, 32, 0.4) solid;
-            &:hover {
-              font-size: 25px;
-              transition: 0.2s ease-in-out;
-            }
-          }
-        }
-      }
+
     }
 
   }
   .sentCallback {
-    margin-left: 120px;
+    margin-left: 15%;
     .clientName {
       font-size: 16px;
       font-weight: 400;
@@ -382,7 +553,6 @@ header {
         font-size: 16px;
         padding: 10px 10px 10px 5px;
         display: block;
-        width: 560px;
         border: none;
         border-radius: 0;
         border-bottom: 1px solid #CED4DA;
@@ -440,8 +610,34 @@ header {
     }
 
   }
-}
+  .briefing {
+    h4 {
+      margin-top: 72px;
+      margin-bottom: 15px;
+    }
+    div {
+      margin-top: 20px;
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        color: $accent;
+        border-bottom: 1px rgba(210, 32, 32, 0.4) solid;
+        &:hover {
+          font-size: 25px;
+          transition: 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .small {
+      font-size: 24px;
+    }
+  }
+  }
 footer {
+
   display: flex;
   margin-top: 160px;
   border-top: 1px solid #ACB5BD ;
@@ -466,6 +662,25 @@ footer {
     img {
       margin-top: 18px;
       margin-left: 40%;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    display: block;
+    div {
+      display: block;
+      flex-direction: row;
+      span {
+      display: inline-block;
+        margin-left: 32%;
+      }
+      a {
+        display: inline-block;
+        margin-left: 25%;
+      }
+      a:nth-child(1) {
+        display: inline-block;
+        margin-left: 32%;
+      }
     }
   }
 }
