@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #343A40;
+  font-size: 14px;
+}
+body a {
+  text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 26px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  z-index: 99;
+  padding: 5px;
+}
+header .logo {
+  margin-left: 32px;
+}
+header .nav {
+  display: flex;
+}
+header .nav ul {
+  display: flex;
+}
+header .nav ul a:not(:first-child) {
+  margin-left: 32px;
+}
+header .nav ul a li {
+  cursor: pointer;
+  color: #000;
+  list-style: none;
+}
+header .nav ul a li:hover {
+  color: #D22020;
+  font-size: 20px;
+  transition: 0.2s ease-in-out;
+}
+header .nav button {
+  margin-left: 15px;
+  margin-right: 32px;
+  background-color: #D22020;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+header .nav button:hover {
+  box-shadow: 2px 2px 2px #000000;
+  transition: 0.2s ease-in-out;
+}
+header .nav button span {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.main {
+  background-image: url("./img/img.png");
+  background-size: 100% 100%;
+  background-position: center;
+  padding-left: 32px;
+}
+.main .about {
+  font-size: calc(10px + 0.2604166667vw);
+  padding-top: 100px;
+}
+.main .mainBottom {
+  margin-top: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .mainBottom .scrollDown {
+  padding-left: 50%;
+}
+.main .mainBottom .messengers {
+  display: flex;
+}
+.main .mainBottom .messengers .whatsapp {
+  cursor: pointer;
+  display: flex;
+}
+.main .mainBottom .messengers .whatsapp span {
+  margin-left: 8px;
+}
+.main .mainBottom .messengers .telegram {
+  cursor: pointer;
+  display: flex;
+  margin-left: 32px;
+}
+.main .mainBottom .messengers .telegram span {
+  margin-left: 8px;
+  margin-right: 32px;
+}
+
+#portfolio {
+  padding-top: 60px;
+  margin-left: 32px;
+}
+#portfolio .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#portfolio .title h2 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+#portfolio .title a {
+  color: #D22020;
+  margin-right: 32px;
+}
+#portfolio .title a svg {
+  margin-left: 8px;
+}
+#portfolio .title a:hover {
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+#portfolio .gridPortfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: ". ." ". ." ". .";
+}
+@media screen and (max-width: 1110px) {
+  #portfolio .gridPortfolio {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". " ". " ". ";
+  }
+}
+#portfolio .gridPortfolio .exampleOfWork {
+  padding-bottom: 20px;
+}
+#portfolio .gridPortfolio .exampleOfWork .imgOfExample {
+  width: 98%;
+  height: 515px;
+  border-radius: 8px;
+}
+#portfolio .gridPortfolio .exampleOfWork .imgOfExample .categoryOfWork {
+  justify-content: flex-start;
+  margin-left: 25px;
+  padding-top: 480px;
+  height: 24px;
+}
+#portfolio .gridPortfolio .exampleOfWork .imgOfExample .categoryOfWork div span {
+  border-radius: 10px 10px 10px 10px;
+  background-color: black;
+  padding: 2px 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+#portfolio .gridPortfolio .exampleOfWork .exampleInfo {
+  max-width: 680px;
+}
+#portfolio .gridPortfolio .exampleOfWork .exampleInfo h4 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -3%;
+  color: #212529;
+}
+#portfolio .gridPortfolio .exampleOfWork .exampleInfo span {
+  color: #6C757D;
+}
+#portfolio .allCases {
+  display: flex;
+  justify-content: center;
+}
+#portfolio .allCases button {
+  display: flex;
+  margin-top: 95px;
+  cursor: pointer;
+  border: 1px solid #D22020;
+  background-color: #fff;
+  border-radius: 56px;
+}
+#portfolio .allCases button a {
+  font-size: 18px;
+  line-height: 130%;
+  color: #D22020;
+  padding: 21px 70px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#portfolio .allCases button:hover {
+  background-color: #D22020;
+  transition: 0.2s ease-in-out;
+}
+#portfolio .allCases button:hover a {
+  color: #fff;
+}
+
+#scrollToAbout {
+  padding: 50px 0;
+}
+
+#aboutUs {
+  margin-left: 32px;
+}
+#aboutUs .ourStaff {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-top: 60px;
+  display: flex;
+}
+#aboutUs .ourStaff div:not(:first-child) {
+  margin-left: 32px;
+}
+#aboutUs .ourStaff div .number {
+  color: #D22020;
+  margin-right: 12px;
+}
+#aboutUs .infoAndPhoto {
+  display: flex;
+  justify-content: space-between;
+}
+#aboutUs .infoAndPhoto .info p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+}
+#aboutUs .infoAndPhoto .info .statistic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". . .";
+}
+#aboutUs .infoAndPhoto .info .statistic .number {
+  color: #D22020;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+#aboutUs .infoAndPhoto .info button {
+  margin-top: 40px;
+  display: flex;
+  cursor: pointer;
+  border: 1px solid #D22020;
+  background-color: #fff;
+  border-radius: 56px;
+}
+#aboutUs .infoAndPhoto .info button a {
+  font-size: 18px;
+  line-height: 130%;
+  color: #D22020;
+  padding: 21px 70px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#aboutUs .infoAndPhoto .info button:hover {
+  background-color: #D22020;
+  transition: 0.2s ease-in-out;
+}
+#aboutUs .infoAndPhoto .info button:hover a {
+  color: #fff;
+}
+#aboutUs .infoAndPhoto .photo {
+  padding-right: 50px;
+}
+#aboutUs .infoAndPhoto .photo img {
+  max-height: 678px;
+  max-width: 678px;
+}
+
+#makeRequest {
+  margin-left: 32px;
+}
+#makeRequest h4 {
+  margin: 8px 0;
+}
+#makeRequest div div .manager img {
+  margin-top: 50px;
+}
+#makeRequest div div .briefing h4 {
+  margin-top: 72px;
+  margin-bottom: 15px;
+}
+#makeRequest div div .briefing div {
+  margin-top: 20px;
+}
+#makeRequest div div .briefing div a {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #D22020;
+  border-bottom: 1px rgba(210, 32, 32, 0.4) solid;
+}
+#makeRequest div div .briefing div a:hover {
+  font-size: 25px;
+  transition: 0.2s ease-in-out;
+}
+#makeRequest .sentCallback {
+  margin-left: 120px;
+}
+#makeRequest .sentCallback .clientName {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #ADB5BD;
+}
+#makeRequest .sentCallback .group span {
+  color: #ADB5BD;
+}
+#makeRequest .sentCallback .group input,
+#makeRequest .sentCallback .group textarea {
+  background: none;
+  color: #000;
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 560px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #CED4DA;
+}
+#makeRequest .sentCallback .group input:focus,
+#makeRequest .sentCallback .group textarea:focus {
+  outline: none;
+}
+#makeRequest .sentCallback .group input:focus ~ label, #makeRequest .sentCallback .group input:valid ~ label,
+#makeRequest .sentCallback .group textarea:focus ~ label,
+#makeRequest .sentCallback .group textarea:valid ~ label {
+  top: -14px;
+  font-size: 16px;
+  color: #CED4DA;
+}
+#makeRequest .sentCallback .group label {
+  color: #CED4DA;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+#makeRequest .sentCallback button {
+  margin-top: 32px;
+  display: flex;
+  cursor: pointer;
+  border: 1px solid #D22020;
+  background-color: #D22020;
+  border-radius: 56px;
+  font-size: 18px;
+  line-height: 130%;
+  color: #fff;
+  padding: 16px 32px;
+  text-transform: uppercase;
+}
+#makeRequest .sentCallback button:hover {
+  background-color: #fff;
+  transition: 0.2s ease-in-out;
+  color: #D22020;
+}
+#makeRequest .big {
+  margin-top: 50px;
+}
+#makeRequest .big span {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+#makeRequest .big input {
+  width: 700px;
+}
+
+footer {
+  display: flex;
+  margin-top: 160px;
+  border-top: 1px solid #ACB5BD;
+  justify-content: center;
+}
+footer div {
+  margin-top: 25px;
+}
+footer div span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ACB5BD;
+}
+footer div a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ACB5BD;
+  margin-left: 25px;
+}
+footer div img {
+  margin-top: 18px;
+  margin-left: 40%;
+}
+
+/*# sourceMappingURL=index.css.map */
