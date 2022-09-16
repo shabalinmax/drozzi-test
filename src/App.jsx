@@ -68,8 +68,7 @@ function App() {
     const [TSOfClient, setTSOfClient] = React.useState('')
     const [isInfoSent, setIsInfoSent] = React.useState(false)
     const [isBurgerOpen, setIsBurgerOpen] = React.useState(false)
-    const [isBurgerClosed, setIsBurgerClosed] = React.useState(false)
-    const [isBurgerEx, setIsBurgerEx] = React.useState(false)
+
 
     let needBurger = window.screen.width
     needBurger = needBurger < 600
@@ -116,7 +115,7 @@ function App() {
                 </a>
             </div>
             <nav className="nav">
-                <ul style={ needBurger ? isBurgerOpen ? {display: "block"} : {display: 'none'} : {display:"flex"} }  >
+                <ul style={ needBurger ? isBurgerOpen ? {display: "block", height: '100vh', marginLeft: '40px'} : {display: 'none'} : {display:"flex"} }  >
                     {categories.map((el) =>
                         <a onClick={() => onClickBurger()} key={el.id} href={el.href}>
                             <li>{el.title}</li>
