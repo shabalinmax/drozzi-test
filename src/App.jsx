@@ -123,10 +123,19 @@ function App() {
                         </a>
                     )}
                 </ul>
-                <svg onClick={() => onClickBurger()} className={'d-none'} width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 16H0V13.3333H24V16ZM24 9.33333H0V6.66667H24V9.33333ZM24 2.66667H0V0H24V2.66667Z" fill="black"/>
-                </svg>
 
+                {isBurgerOpen ?
+                    <svg style={{right: '15px',
+                        top: '30px'}} onClick={() => onClickBurger()} className={'d-none'} width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M25.0607 25.0607C24.4749 25.6464 23.5251 25.6464 22.9394 25.0607L6.06068 8.18198C5.47489 7.59619 5.47489 6.64645 6.06068 6.06066C6.64646 5.47487 7.59621 5.47487 8.182 6.06066L25.0607 22.9393C25.6465 23.5251 25.6465 24.4749 25.0607 25.0607Z" fill="black"/>
+                        <path fillRule="evenodd" clipRule="evenodd" d="M6.06068 25.0607C5.47489 24.4749 5.47489 23.5251 6.06068 22.9394L22.9394 6.06068C23.5251 5.47489 24.4749 5.47489 25.0607 6.06068C25.6465 6.64646 25.6465 7.59621 25.0607 8.182L8.182 25.0607C7.59621 25.6465 6.64646 25.6465 6.06068 25.0607Z" fill="black"/>
+                    </svg>
+                    :
+                    <svg  onClick={() => onClickBurger()} className={'d-none'} width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 16H0V13.3333H24V16ZM24 9.33333H0V6.66667H24V9.33333ZM24 2.66667H0V0H24V2.66667Z" fill="black"/>
+                    </svg>
+
+                }
                 <button>
                     <span> Оставить заявку</span>
                 </button>
@@ -308,21 +317,27 @@ function App() {
                 </div>
             </div>
         </div>
+
+
+
+
         <footer>
             <div>
-                <span>
+                <div>
                     2015-2021 © Дрожжи™
-                </span>
-                <a href="">
+                </div>
+                <div>
                     ООО «РВБ-Маркетинг»
-                </a>
-                <a href="">
+                </div>
+                <div >
                 Политика конфиденциальности
-                </a>
+                </div>
                 <br/>
-                <img src={require('./img/logoGrey.png')} alt="HERE WE ARE"/>
             </div>
+            <div className={'footerLogo'}>
+                <img src={require('./img/logoGrey.png')} alt="HERE WE ARE"/>
 
+            </div>
         </footer>
     </div>
   );

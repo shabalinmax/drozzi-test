@@ -44,6 +44,7 @@ header {
     button {
       display: none;
     }
+
   }
 
   position: sticky;
@@ -57,7 +58,6 @@ header {
   line-height: 16px;
   z-index: 99;
   padding: 5px;
-
   .logo {
     margin-left: 32px;
   }
@@ -100,17 +100,13 @@ header {
     }
   }
   @media screen and (max-width: 600px) {
-    //display: block;
-    //
-    //height: 100vh;
-    //
-    transition: 0.5s;
     .logo {
       left: 16px;
       top: 24px;
       position: absolute;
     }
     .nav {
+      transition: 0.3s;
       margin-top: 70px;
       svg {
         display: block;
@@ -132,11 +128,17 @@ header {
         }
         a:nth-child(2) {
           margin-left: 16px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
           margin-bottom: 20px ;
-
         }
         a:nth-child(3) {
           margin-left: 16px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          margin-bottom: 20px ;
         }
         }
       }
@@ -637,51 +639,49 @@ header {
   }
   }
 footer {
-
+  flex-direction: column;
   display: flex;
   margin-top: 160px;
   border-top: 1px solid #ACB5BD ;
   justify-content: center;
   div {
-
-    margin-top: 25px;
-    span {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      color: #ACB5BD;
-
-    }
-    a {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      color: #ACB5BD;
-      margin-left: 25px;
-    }
-    img {
-      margin-top: 18px;
-      margin-left: 40%;
-    }
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #ACB5BD;
+    display: flex;
+    justify-content: center;
+    margin-left: 24px;
   }
-  @media screen and (max-width: 660px) {
-    display: block;
+  .footerLogo {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    margin-top: 60px;
     div {
-      display: block;
-      flex-direction: row;
-      span {
-      display: inline-block;
-        margin-left: 32%;
-      }
-      a {
-        display: inline-block;
-        margin-left: 25%;
-      }
-      a:nth-child(1) {
-        display: inline-block;
-        margin-left: 32%;
-      }
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #ACB5BD;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 24px;
+      align-items: center;
+
+    }
+    .footerLogo {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
+      align-items: center;
     }
   }
+
 }
 
